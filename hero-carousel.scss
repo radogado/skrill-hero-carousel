@@ -3,6 +3,13 @@ $breakpoint-max: 899.9px;
 
 $visible-image-size: 61%;
 
+:root {
+    --color-violet: #872166;
+    --color-purple: #4f2455;
+    --color-white: #fff;
+    --color-purple-30: #886e8c;
+}
+
 .hero {
     padding: 1em;
     margin: auto 0;
@@ -11,8 +18,8 @@ $visible-image-size: 61%;
 
     @media (min-width: 900px) {
         &.hero-carousel-container {
-            -webkit-mask: url(../images/chevron-mask.svg) calc(100% - 1.5em) -4em no-repeat;
-            mask: url(../images/chevron-mask.svg) calc(100% - 1.5em) -4em no-repeat;
+            -webkit-mask: url(./images/chevron-mask.svg) calc(100% - 1.5em) -4em no-repeat;
+            mask: url(./images/chevron-mask.svg) calc(100% - 1.5em) -4em no-repeat;
 
             @media (min-width: 1312px) {
                 -webkit-mask-position-x: calc(100% - 50vw + 640px - 0.5em);
@@ -73,7 +80,7 @@ $visible-image-size: 61%;
 
             &:before {
                 width: 29%;
-                background: url("../images/Chevron_1.svg") top right no-repeat;
+                background: url("./images/Chevron_1.svg") top right no-repeat;
                 background-size: auto calc(100% + 15em);
                 background-position: calc(100%) -12em;
                 z-index: 2;
@@ -199,8 +206,8 @@ $visible-image-size: 61%;
                 .carousel-indicators-hero-list:first-of-type {
                     // The overlay
 
-                    -webkit-mask: url(../images/tabs-mask.svg) no-repeat 0px calc(100% + 0px) / 0 auto; // calc(100% + 0px) fixes Safari flickering
-                    mask: url(../images/tabs-mask.svg) no-repeat 0px calc(100% + 0px) / 0 auto;
+                    -webkit-mask: url(./images/tabs-mask.svg) no-repeat 0px calc(100% + 0px) / 0 auto; // calc(100% + 0px) fixes Safari flickering
+                    mask: url(./images/tabs-mask.svg) no-repeat 0px calc(100% + 0px) / 0 auto;
                     background: var(--color-purple);
                     background: linear-gradient(45deg,
                             var(--color-violet),
@@ -322,8 +329,8 @@ $visible-image-size: 61%;
                     font-size: 1.5em;
                     text-indent: -11em;
                     overflow: hidden;
-                    -webkit-mask: url(../images/chevron-right.svg) center center no-repeat;
-                    mask: url(../images/chevron-right.svg) center center no-repeat;
+                    -webkit-mask: url(./images/chevron-right.svg) center center no-repeat;
+                    mask: url(./images/chevron-right.svg) center center no-repeat;
                     background-color: var(--color-purple-30);
 
                     &:first-of-type {
@@ -441,8 +448,8 @@ $visible-image-size: 61%;
             }
 
             .indicators-scroll {
-                -webkit-mask: url(../images/slanted-mask.svg) no-repeat 0 100%;
-                mask: url(../images/slanted-mask.svg) no-repeat 0 100%;
+                -webkit-mask: url(./images/slanted-mask.svg) no-repeat 0 100%;
+                mask: url(./images/slanted-mask.svg) no-repeat 0 100%;
                 padding-inline-start: 0;
                 margin-inline-start: 0.1em;
             }
@@ -476,8 +483,8 @@ $visible-image-size: 61%;
 
     @media (min-width: $breakpoint-min) {
         margin: auto;
-        -webkit-mask: url(../images/hero-mask-right.svg) calc(100% - 15px) center no-repeat;
-        mask: url(../images/hero-mask-right.svg) calc(100% - 15px) center no-repeat;
+        -webkit-mask: url(./images/hero-mask-right.svg) calc(100% - 15px) center no-repeat;
+        mask: url(./images/hero-mask-right.svg) calc(100% - 15px) center no-repeat;
         -webkit-mask-size: cover;
         mask-size: cover;
 
@@ -496,7 +503,7 @@ $visible-image-size: 61%;
             left: auto;
             width: 100%;
             height: calc(100% + 2px);
-            background: url(../images/hero-overlay-left-2.svg) no-repeat -3em center/contain;
+            background: url(./images/hero-overlay-left-2.svg) no-repeat -3em center/contain;
             background-size: 19em auto;
 
             background-size: auto;
@@ -507,8 +514,8 @@ $visible-image-size: 61%;
         picture {
             background: grey; // Temporary/fallback background
 
-            -webkit-mask: url(../images/hero-mask.svg) center left no-repeat;
-            mask: url(../images/hero-mask.svg) center left no-repeat;
+            -webkit-mask: url(./images/hero-mask.svg) center left no-repeat;
+            mask: url(./images/hero-mask.svg) center left no-repeat;
 
             &:after {
                 content: "";
@@ -518,7 +525,7 @@ $visible-image-size: 61%;
                 bottom: 0;
                 left: auto;
                 width: 33%;
-                background: url("../images/hero-overlay-right-2.svg") no-repeat 100% 0 / contain;
+                background: url("./images/hero-overlay-right-2.svg") no-repeat 100% 0 / contain;
                 background-size: auto 100%;
 
                 background-size: auto;

@@ -1,4 +1,25 @@
 if (document.querySelector(".hero .carousel")) {
+	window.updateURLParameter = (url, param, paramVal) => {
+		// return input string with updated/added URL parameter
+		var hash = url.match("#") ? "#" + url.split("#")[1] : "";
+		url = url.split("#")[0];
+		var newAdditionalURL = "";
+		var tempArray = url.split("?");
+		var baseURL = tempArray[0];
+		var additionalURL = tempArray[1];
+		var temp = "";
+		if (additionalURL) {
+			tempArray = additionalURL.split("&");
+			for (var i = 0; i < tempArray.length; i++) {
+				if (tempArray[i].split("=")[0] !== param) {
+					newAdditionalURL += temp + tempArray[i];
+					temp = "&";
+				}
+			}
+		}
+		var rows_txt = temp + "" + param + "=" + paramVal;
+		return baseURL + "?" + newAdditionalURL + rows_txt + hash;
+	};
 	document.querySelector(".hero .carousel .carousel-item.active .hero-slide--image").addEventListener("animationend", () => {
 		document.querySelector(".hero .carousel").dataset.revealed = true;
 		delete document.querySelector(".hero .carousel").dataset.animating;
@@ -66,7 +87,7 @@ if (document.querySelector(".hero .carousel")) {
 			indicators.children[new_index].querySelector("button").click();
 		};
 	});
-	$(".hero .carousel").on("slid.bs.carousel", function () {
+	$(".hero .carousel").on("slid.bs.carousel", function() {
 		let index = [...this.querySelector(".carousel-inner").children].indexOf(this.querySelector(".carousel-inner .active"));
 		updateIndicators(index);
 	});
@@ -106,7 +127,7 @@ if (document.querySelector(".hero .carousel")) {
 			clearTimeout(isScrolling);
 			lastScrollX = scrollStart(el);
 			// Set a timeout to run after scrolling ends
-			isScrolling = setTimeout(function () {
+			isScrolling = setTimeout(function() {
 				if (lastScrollX === scrollStart(el) && scrollStart(el) % el.offsetWidth === 0) {
 					// Also if scroll is in snap position
 					// 					console.log( 'Scrolling has stopped.', el, scrollStart(el), el.scrollWidth, Math.round(scrollStart(el)/el.scrollWidth*el.children.length));

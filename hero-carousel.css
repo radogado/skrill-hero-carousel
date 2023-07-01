@@ -1,3 +1,10 @@
+:root {
+  --color-violet: #872166;
+  --color-purple: #4f2455;
+  --color-white: #fff;
+  --color-purple-30: #886e8c;
+}
+
 .hero {
   padding: 1em;
   margin: auto 0;
@@ -6,8 +13,8 @@
 }
 @media (min-width: 900px) {
   .hero.hero-carousel-container {
-    -webkit-mask: url(../images/chevron-mask.svg) calc(100% - 1.5em) -4em no-repeat;
-    mask: url(../images/chevron-mask.svg) calc(100% - 1.5em) -4em no-repeat;
+    -webkit-mask: url(./images/chevron-mask.svg) calc(100% - 1.5em) -4em no-repeat;
+    mask: url(./images/chevron-mask.svg) calc(100% - 1.5em) -4em no-repeat;
   }
 }
 @media (min-width: 900px) and (min-width: 1312px) {
@@ -54,7 +61,7 @@
   }
   .hero .carousel:before {
     width: 29%;
-    background: url("../images/Chevron_1.svg") top right no-repeat;
+    background: url("./images/Chevron_1.svg") top right no-repeat;
     background-size: auto calc(100% + 15em);
     background-position: 100% -12em;
     z-index: 2;
@@ -164,8 +171,8 @@
     padding-inline-end: 3em;
   }
   .hero .carousel-indicators-hero .indicators-scroll .carousel-indicators-hero-list:first-of-type {
-    -webkit-mask: url(../images/tabs-mask.svg) no-repeat 0px calc(100% + 0px)/0 auto;
-    mask: url(../images/tabs-mask.svg) no-repeat 0px calc(100% + 0px)/0 auto;
+    -webkit-mask: url(./images/tabs-mask.svg) no-repeat 0px calc(100% + 0px)/0 auto;
+    mask: url(./images/tabs-mask.svg) no-repeat 0px calc(100% + 0px)/0 auto;
     background: var(--color-purple);
     background: linear-gradient(45deg, var(--color-violet), var(--color-purple));
     transition: all var(--duration) ease-out;
@@ -267,8 +274,8 @@
     font-size: 1.5em;
     text-indent: -11em;
     overflow: hidden;
-    -webkit-mask: url(../images/chevron-right.svg) center center no-repeat;
-    mask: url(../images/chevron-right.svg) center center no-repeat;
+    -webkit-mask: url(./images/chevron-right.svg) center center no-repeat;
+    mask: url(./images/chevron-right.svg) center center no-repeat;
     background-color: var(--color-purple-30);
   }
   .hero .carousel-indicators-hero .indicators-scroll > button:first-of-type {
@@ -363,8 +370,8 @@
     box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.1);
   }
   .hero .carousel-indicators-hero .indicators-scroll {
-    -webkit-mask: url(../images/slanted-mask.svg) no-repeat 0 100%;
-    mask: url(../images/slanted-mask.svg) no-repeat 0 100%;
+    -webkit-mask: url(./images/slanted-mask.svg) no-repeat 0 100%;
+    mask: url(./images/slanted-mask.svg) no-repeat 0 100%;
     padding-inline-start: 0;
     margin-inline-start: 0.1em;
   }
@@ -402,8 +409,8 @@
 @media (min-width: 900px) {
   .hero-slide .hero-slide--image {
     margin: auto;
-    -webkit-mask: url(../images/hero-mask-right.svg) calc(100% - 15px) center no-repeat;
-    mask: url(../images/hero-mask-right.svg) calc(100% - 15px) center no-repeat;
+    -webkit-mask: url(./images/hero-mask-right.svg) calc(100% - 15px) center no-repeat;
+    mask: url(./images/hero-mask-right.svg) calc(100% - 15px) center no-repeat;
     -webkit-mask-size: cover;
     mask-size: cover;
     -webkit-mask-size: auto;
@@ -420,7 +427,7 @@
     left: auto;
     width: 100%;
     height: calc(100% + 2px);
-    background: url(../images/hero-overlay-left-2.svg) no-repeat -3em center/contain;
+    background: url(./images/hero-overlay-left-2.svg) no-repeat -3em center/contain;
     background-size: 19em auto;
     background-size: auto;
     background-position-y: -4em;
@@ -428,8 +435,8 @@
   }
   .hero-slide .hero-slide--image picture {
     background: grey;
-    -webkit-mask: url(../images/hero-mask.svg) center left no-repeat;
-    mask: url(../images/hero-mask.svg) center left no-repeat;
+    -webkit-mask: url(./images/hero-mask.svg) center left no-repeat;
+    mask: url(./images/hero-mask.svg) center left no-repeat;
   }
   .hero-slide .hero-slide--image picture:after {
     content: "";
@@ -439,7 +446,7 @@
     bottom: 0;
     left: auto;
     width: 33%;
-    background: url("../images/hero-overlay-right-2.svg") no-repeat 100% 0/contain;
+    background: url("./images/hero-overlay-right-2.svg") no-repeat 100% 0/contain;
     background-size: auto 100%;
     background-size: auto;
     background-position-y: -4em;
