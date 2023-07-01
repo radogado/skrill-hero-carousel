@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2560px" height="1200px" viewBox="0 0 2560 1200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Slice 1</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero-mask" transform="translate(-2.000000, 0.000000)" fill="#D8D8D8" fill-rule="nonzero">
+            <path d="M2,0 L2562,0 L2562,1200 C1422.61202,1200 569.278691,1200 2,1200 C0.389801921,1200 0.389801921,1000 2,600 C5.73242199,548.401486 37.7057922,498.284298 55.3085937,449.882812 C72.9113953,401.481326 107.996257,351.598514 135.726562,300 C108.642234,250.177696 73.5573728,201.271446 55.3085937,151.09375 C37.0598146,100.916054 5.08644443,49.8223038 2,0 Z" id="Rectangle"></path>
+        </g>
+    </g>
+</svg>

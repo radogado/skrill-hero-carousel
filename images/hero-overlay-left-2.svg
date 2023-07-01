@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="301px" height="1400px" viewBox="0 0 301 1400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Slice 1</title>
+    <defs>
+        <filter x="-21.5%" y="-4.1%" width="143.0%" height="108.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="-10" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.309803922   0 0 0 0 0.141176471   0 0 0 0 0.333333333  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-18.1%" y="-2.8%" width="136.3%" height="105.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="-10" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0994591346 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero-overlay-left-2" transform="translate(7.000000, 0.000000)" fill-rule="nonzero">
+            <g id="Combined-Shape-Copy-2" filter="url(#filter-1)" fill="#FFFFFF">
+                <g id="path-1-link">
+                    <path d="M97.6165436,0 C129.501342,132.757785 269,377.560937 269,377.560937 C269,377.560937 149.665205,627.979178 97,752 L97.6165436,1400 C50.0697203,1400 24.1975391,1400 20,1400 C17.7552083,1400 -21.828125,905.796875 20,752 C61.828125,598.203125 191.383456,377.559603 191.383456,377.559603 C191.383456,377.559603 51.8834659,132.757785 20,0 L97.6165436,0 Z" id="path-1"></path>
+                </g>
+            </g>
+            <g id="Combined-Shape-Copy" filter="url(#filter-2)" transform="translate(79.000000, 0.000000)">
+                <g id="path-3-link" transform="translate(18.000000, 0.000000)" fill="#000000">
+                    <path d="M25.528893,0 C57.429998,132.757785 197,377.560937 197,377.560937 C197,377.560937 119.791403,512.980591 67.099272,637.00114 L41.570379,637.00114 C94.26251,512.979994 171.471107,377.559603 171.471107,377.559603 C171.471107,377.559603 31.899772,132.757785 0,0 L0,0 L25.528893,0 Z" id="path-3"></path>
+                </g>
+                <g id="path-3-link" fill="#28CDD2">
+                    <path d="M43.528893,0 C75.429998,132.757785 215,377.560937 215,377.560937 C215,377.560937 78,632.820312 41.5195312,757 C5.0390624,881.179688 44.6643097,1400 43.528893,1400 C42.9800367,1400 34.4704057,1400 18,1400 C-5.95572917,1061.01563 -5.95572917,845.015625 18,752 C53.9335937,612.476562 189.471107,377.559603 189.471107,377.559603 C189.471107,377.559603 49.899772,132.757785 18,0 L43.528893,0 Z" id="path-3"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
