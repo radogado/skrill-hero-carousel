@@ -37,7 +37,8 @@
   width: var(--page-width, 1280px);
   margin: auto;
   height: auto !important;
-  --duration: 1s;
+  --duration: 3s;
+  position: relative;
 }
 @media (min-width: 900px) {
   .hero .carousel {
@@ -63,7 +64,7 @@
     width: 29%;
     background: url("./images/Chevron_1.svg") top right no-repeat;
     background-size: auto calc(100% + 15em);
-    background-position: 100% -12em;
+    background-position: calc(100%) -12em;
     z-index: 2;
     background-size: auto;
     background-position-y: -4em;
@@ -114,6 +115,7 @@
   }
 }
 .hero .carousel-item {
+  position: relative;
   display: block;
   grid-column: 1/1;
   grid-row: 1/1;
@@ -127,6 +129,7 @@
 .hero .carousel-inner {
   overflow: visible;
   z-index: 0;
+  position: relative;
 }
 .hero .carousel-indicators-hero {
   position: relative;
@@ -231,7 +234,7 @@
   }
   .hero .carousel-indicators-hero .carousel-indicators-hero-list > * {
     flex: 1 0 auto;
-    width: 33.3333333333%;
+    width: calc(100% / 3);
     padding: 1em 0;
     scroll-snap-align: center;
   }
@@ -653,6 +656,9 @@
   }
 }
 @media (min-width: 900px) {
+  .hero-slide {
+    box-sizing: border-box;
+  }
   .hero-slide .hero-slide--text,
 .hero-slide .hero-slide--image {
     animation: 1 var(--duration) forwards calc(var(--duration) / 5);

@@ -87,10 +87,10 @@ if (document.querySelector(".hero .carousel")) {
 			indicators.children[new_index].querySelector("button").click();
 		};
 	});
-	$(".hero .carousel").on("slid.bs.carousel", function() {
-		let index = [...this.querySelector(".carousel-inner").children].indexOf(this.querySelector(".carousel-inner .active"));
-		updateIndicators(index);
-	});
+	// $(".hero .carousel").on("slid.bs.carousel", function() {
+	// 	let index = [...this.querySelector(".carousel-inner").children].indexOf(this.querySelector(".carousel-inner .active"));
+	// 	updateIndicators(index);
+	// });
 	let resize_timeout;
 	window.addEventListener("resize", (e) => {
 		let carousel = document.querySelector(".hero .carousel");
@@ -141,7 +141,7 @@ if (document.querySelector(".hero .carousel")) {
 	document.addEventListener("visibilitychange",
 		(e) => {
 			document.querySelectorAll(".carousel").forEach((el) => {
-				$(el).carousel(document.hidden === true ? "pause" : "cycle");
+				// $(el).carousel(document.hidden === true ? "pause" : "cycle");
 			});
 		}, false);
 	document.querySelector(".hero .carousel").addEventListener("animationstart", (e) => {

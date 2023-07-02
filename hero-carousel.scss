@@ -16,7 +16,7 @@ $visible-image-size: 61%;
     width: 100%;
     overflow: hidden;
 
-    @media (min-width: 900px) {
+    @media (min-width: $breakpoint-min) {
         &.hero-carousel-container {
             -webkit-mask: url(./images/chevron-mask.svg) calc(100% - 1.5em) -4em no-repeat;
             mask: url(./images/chevron-mask.svg) calc(100% - 1.5em) -4em no-repeat;
@@ -53,7 +53,8 @@ $visible-image-size: 61%;
         width: var(--page-width, 1280px);
         margin: auto;
         height: auto !important; // Override Bootstrap dynamic height
-        --duration: 1s;
+        --duration: 3s;
+        position: relative;
 
         @media (min-width: $breakpoint-min) {
             &[data-animating] {
@@ -132,6 +133,7 @@ $visible-image-size: 61%;
     }
 
     .carousel-item {
+        position: relative;
         display: block;
         grid-column: 1/1;
         grid-row: 1/1;
@@ -149,6 +151,7 @@ $visible-image-size: 61%;
     .carousel-inner {
         overflow: visible;
         z-index: 0;
+        position: relative;
     }
 
     .carousel-indicators-hero {
@@ -775,6 +778,8 @@ $visible-image-size: 61%;
     }
 
     .hero-slide {
+        
+        box-sizing: border-box;
 
         .hero-slide--text,
         .hero-slide--image {
