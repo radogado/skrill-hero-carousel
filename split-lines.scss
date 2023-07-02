@@ -1,0 +1,133 @@
+.split-lines {
+    display: grid;
+
+    > * {
+        grid-column: 1/1;
+        grid-row: 1/1;
+
+        -webkit-mask: linear-gradient(45deg, #fff, #fff) no-repeat 0 0 / 100% var(--line-height, 100%);
+        mask: linear-gradient(45deg, #fff, #fff) no-repeat 0 0 / 100% var(--line-height, 100%);
+
+        @for $i from 2 through 5 {
+            &:nth-child(#{$i}) {
+                -webkit-mask-position-y: calc(#{$i - 1}* var(--line-height));
+                mask-position-y: calc(#{$i - 1}* var(--line-height));
+            }
+        }
+
+        &:nth-child(5) ~ * {
+            -webkit-mask-position-y: calc(5 * var(--line-height));
+            mask-position-y: calc(5 * var(--line-height));
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+        }
+    }
+}
+
+@-moz-document url-prefix() {
+    .split-lines > * {
+        mask: none;
+
+        ~ * {
+            display: none;
+        }
+    }
+}
+
+@keyframes hero-text-headline {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    33% {
+        opacity: 0;
+    }
+
+    34% {
+        opacity: 0;
+    }
+
+    67% {
+        opacity: 1;
+        transform: none;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.hero.text-image {
+    --duration: 2s;
+}
+
+.hero.text-image,
+.active .hero-slide {
+
+    h1,
+    h2 {
+        * {
+            animation: hero-text-headline 1 var(--duration) forwards;
+
+            @media (prefers-reduced-motion) {
+                opacity: 1;
+                transform: none;
+                animation: none;
+            }
+        }
+
+        &.split-lines {
+            animation: none;
+
+            > * {
+                opacity: 0;
+
+                @media (prefers-reduced-motion) {
+                    opacity: 1;
+                }
+
+                @for $i from 2 through 5 {
+                    &:nth-child(#{$i}) {
+                        animation-delay: calc(.1s * #{($i - 1)});
+                    }
+                }
+
+                &:nth-child(5) ~ * {
+                    animation-delay: 0.5s;
+                }
+            }
+        }
+    }
+}
+
+@keyframes split-lines-no-js {
+    100% {
+        visibility: visible;
+    }
+}
+
+.hero.text-image {
+
+    h1,
+    h2 {
+        &:not(.split-lines) {
+            visibility: hidden;
+            animation: split-lines-no-js 1 0.1s 5s forwards;
+        }
+    }
+}
+
+@media (max-width: 899.9px) {
+    .active .hero-slide {
+
+        h1,
+        h2 {
+
+            &,
+            * {
+                animation: none;
+                opacity: 1 !important;
+            }
+        }
+    }
+}
