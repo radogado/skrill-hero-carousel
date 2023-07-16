@@ -150,4 +150,7 @@ if (document.querySelector(".hero .carousel")) {
 			delete e.target.dataset.revealed;
 		}
 	});
+	document.querySelectorAll(".hero .carousel-indicators-hero .carousel-indicators-hero-list button").forEach(el => {
+		el.onfocus = e => e.target.scrollIntoViewIfNeeded();
+	});
 }

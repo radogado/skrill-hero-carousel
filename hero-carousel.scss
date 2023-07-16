@@ -53,7 +53,7 @@ $visible-image-size: 61%;
         width: var(--page-width, 1280px);
         margin: auto;
         height: auto !important; // Override Bootstrap dynamic height
-        --duration: 3s;
+        --duration: 1s;
         position: relative;
 
         @media (min-width: $breakpoint-min) {
@@ -390,7 +390,7 @@ $visible-image-size: 61%;
                     display: inline-block;
                 }
 
-                outline-offset: -5px;
+                outline-offset: -1rem;
 
                 &:focus:not(:focus-visible) {
                     outline: 0;
