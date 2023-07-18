@@ -10,8 +10,12 @@ $visible-image-size: 61%;
     --color-purple-30: #886e8c;
 }
 
+body {
+    margin: 0;
+}
+
 .hero {
-    padding: 1em;
+    // padding: 1em;
     margin: auto 0;
     width: 100%;
     overflow: hidden;
@@ -65,7 +69,7 @@ $visible-image-size: 61%;
                 display: none;
             }
 
-            padding: 0 0 2.5em 0;
+            padding: 0 0 .5em 0;
             margin-bottom: 5em;
 
             &:before,
@@ -175,6 +179,7 @@ $visible-image-size: 61%;
         .indicators-scroll {
             overflow: auto;
             display: grid;
+            scroll-behavior: smooth;
 
             scrollbar-color: var(--color-purple) var(--color-purple-30);
             scrollbar-width: thin;
@@ -364,6 +369,7 @@ $visible-image-size: 61%;
                 text-align: start;
                 font-weight: bold;
                 font-size: 1em;
+                cursor: pointer;
 
                 @media (min-width: 1080px) {
                     font-size: 1.25em;
@@ -608,6 +614,7 @@ $visible-image-size: 61%;
     h1,
     h2 {
         font-size: 5em;
+        line-height: 1.075;
     }
 
     h4 {

@@ -5,8 +5,11 @@
   --color-purple-30: #886e8c;
 }
 
+body {
+  margin: 0;
+}
+
 .hero {
-  padding: 1em;
   margin: auto 0;
   width: 100%;
   overflow: hidden;
@@ -42,7 +45,7 @@
 }
 @media (min-width: 900px) {
   .hero .carousel {
-    padding: 0 0 2.5em 0;
+    padding: 0 0 0.5em 0;
     margin-bottom: 5em;
   }
   .hero .carousel[data-animating] {
@@ -150,6 +153,7 @@
 .hero .carousel-indicators-hero .indicators-scroll {
   overflow: auto;
   display: grid;
+  scroll-behavior: smooth;
   scrollbar-color: var(--color-purple) var(--color-purple-30);
   scrollbar-width: thin;
 }
@@ -306,6 +310,7 @@
   text-align: start;
   font-weight: bold;
   font-size: 1em;
+  cursor: pointer;
   color: var(--color-purple-30);
   line-height: 1.2;
   padding: 0.5em 1em;
@@ -507,6 +512,7 @@
 .hero-slide--text h1,
 .hero-slide--text h2 {
   font-size: 5em;
+  line-height: 1.075;
 }
 .hero-slide--text h4 {
   font-weight: bold;

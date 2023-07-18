@@ -151,6 +151,9 @@ if (document.querySelector(".hero .carousel")) {
 		}
 	});
 	document.querySelectorAll(".hero .carousel-indicators-hero .carousel-indicators-hero-list button").forEach(el => {
-		el.onfocus = e => e.target.scrollIntoViewIfNeeded();
+		el.onfocus = e => {
+			console.log(e);
+			e.target.scrollIntoViewIfNeeded();
+		}
 	});
 }
