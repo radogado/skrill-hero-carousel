@@ -1,5 +1,4 @@
-$breakpoint-min: 900px;
-$breakpoint-max: 899.9px;
+$breakpoint: 900px;
 
 $visible-image-size: 61%;
 
@@ -20,7 +19,7 @@ body {
     width: 100%;
     overflow: hidden;
 
-    @media (min-width: $breakpoint-min) {
+    @media (min-width: $breakpoint) {
         &.hero-carousel-container {
             -webkit-mask: url(./images/chevron-mask.svg) calc(100% - 1.5em) -4em no-repeat;
             mask: url(./images/chevron-mask.svg) calc(100% - 1.5em) -4em no-repeat;
@@ -60,7 +59,7 @@ body {
         --duration: 1s;
         position: relative;
 
-        @media (min-width: $breakpoint-min) {
+        @media (min-width: $breakpoint) {
             &[data-animating] {
                 pointer-events: none;
             }
@@ -94,7 +93,7 @@ body {
                 background-position-y: -4em;
                 background-position-x: calc(100% - 0.5em);
 
-                @media (max-width: $breakpoint-max) {
+                @media not screen and (min-width: $breakpoint) {
                     opacity: 0;
                 }
 
@@ -116,9 +115,9 @@ body {
             }
         }
 
-        @media (max-width: $breakpoint-max) {
-            margin-inline-start: -1em;
-            max-width: calc(100% + 2em);
+        @media not screen and (min-width: $breakpoint) {
+            // margin-inline-start: -1em;
+            // max-width: calc(100% + 2em);
             padding-top: 1em;
 
             h2 {
@@ -131,7 +130,7 @@ body {
         display: grid;
         grid-template: auto/auto;
 
-        @media (min-width: $breakpoint-min) {
+        @media (min-width: $breakpoint) {
             padding-inline-end: 1%;
         }
     }
@@ -199,7 +198,7 @@ body {
                 border-radius: 0px;
             }
 
-            @media (min-width: $breakpoint-min) {
+            @media (min-width: $breakpoint) {
                 > button {
                     display: none;
                 }
@@ -239,7 +238,7 @@ body {
             }
         }
 
-        @media (max-width: $breakpoint-max) {
+        @media not screen and (min-width: $breakpoint) {
             margin: 0;
             margin-top: 1em;
             padding: 0;
@@ -410,14 +409,14 @@ body {
                 }
 
                 button {
-                    @media (min-width: $breakpoint-min) {
+                    @media (min-width: $breakpoint) {
                         color: var(--color-purple-30);
                     }
                 }
             }
         }
 
-        @media (min-width: $breakpoint-min) {
+        @media (min-width: $breakpoint) {
             margin-top: -1em;
 
             li {
@@ -490,7 +489,7 @@ body {
 .hero-slide .hero-slide--image {
     width: $visible-image-size;
 
-    @media (min-width: $breakpoint-min) {
+    @media (min-width: $breakpoint) {
         margin: auto;
         -webkit-mask: url(./images/hero-mask-right.svg) calc(100% - 15px) center no-repeat;
         mask: url(./images/hero-mask-right.svg) calc(100% - 15px) center no-repeat;
@@ -602,7 +601,7 @@ body {
     flex-direction: column;
     justify-content: center;
 
-    @media (min-width: $breakpoint-min) {
+    @media (min-width: $breakpoint) {
         padding: 3em 0;
         padding-inline-end: 55%;
         padding-inline-start: 5em;
@@ -725,7 +724,7 @@ body {
     }
 }
 
-@media (min-width: $breakpoint-min) {
+@media (min-width: $breakpoint) {
     .active .hero-slide {
 
         .hero-slide--image,
@@ -785,7 +784,7 @@ body {
     }
 
     .hero-slide {
-        
+
         box-sizing: border-box;
 
         .hero-slide--text,
@@ -812,7 +811,7 @@ body {
         }
     }
 
-    @media (min-width: $breakpoint-min) {
+    @media (min-width: $breakpoint) {
         .hero .carousel:not([data-revealed]) {
             // pointer-events: none;
 
@@ -864,7 +863,7 @@ body {
     }
 }
 
-@media (max-width: $breakpoint-max) {
+@media not screen and (min-width: $breakpoint) {
     .hero-slide {
         display: flex;
         flex-direction: column;
@@ -921,10 +920,9 @@ body {
     .page-container .hero .carousel-item {
         display: flex;
         flex-direction: column;
-
         flex: 1 0 auto;
+        width: 100%;
         scroll-snap-align: center;
-
         visibility: visible;
         transition: none;
         float: none;
@@ -948,8 +946,8 @@ body {
     }
 }
 
-@-moz-document url-prefix() {
-    .hero .carousel-indicators-hero .indicators-scroll .carousel-indicators-hero-list:first-of-type {
-        transition: none;
-    }
-}
+// @-moz-document url-prefix() {
+//     .hero .carousel-indicators-hero .indicators-scroll .carousel-indicators-hero-list:first-of-type {
+//         transition: none;
+//     }
+// }

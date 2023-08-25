@@ -73,10 +73,10 @@ body {
     background-position-y: -4em;
     background-position-x: calc(100% - 0.5em);
   }
-}
-@media (min-width: 900px) and (max-width: 899.9px) {
-  .hero .carousel:before {
-    opacity: 0;
+  @media not screen and (min-width: 900px) {
+    .hero .carousel:before {
+      opacity: 0;
+    }
   }
 }
 @media (min-width: 900px) and (min-width: 1080px) {
@@ -98,10 +98,8 @@ body {
     padding-inline-start: 1.75em;
   }
 }
-@media (max-width: 899.9px) {
+@media not screen and (min-width: 900px) {
   .hero .carousel {
-    margin-inline-start: -1em;
-    max-width: calc(100% + 2em);
     padding-top: 1em;
   }
   .hero .carousel h2 {
@@ -201,7 +199,7 @@ body {
     color: var(--color-white);
   }
 }
-@media (max-width: 899.9px) {
+@media not screen and (min-width: 900px) {
   .hero .carousel-indicators-hero {
     margin: 0;
     margin-top: 1em;
@@ -727,7 +725,7 @@ body {
     transform: none;
   }
 }
-@media (max-width: 899.9px) {
+@media not screen and (min-width: 900px) {
   .hero-slide {
     display: flex;
     flex-direction: column;
@@ -777,6 +775,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
+    width: 100%;
     scroll-snap-align: center;
     visibility: visible;
     transition: none;
@@ -791,11 +790,6 @@ body {
   }
   .page-container .hero .carousel-item.carousel-item-prev.carousel-item-left {
     animation: slide-prev-right 1 var(--duration) forwards;
-  }
-}
-@-moz-document url-prefix() {
-  .hero .carousel-indicators-hero .indicators-scroll .carousel-indicators-hero-list:first-of-type {
-    transition: none;
   }
 }
 

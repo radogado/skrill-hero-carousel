@@ -1,28 +1,34 @@
 .split-lines {
   display: grid;
 }
+
 .split-lines > * {
   grid-column: 1/1;
   grid-row: 1/1;
   -webkit-mask: linear-gradient(45deg, #fff, #fff) no-repeat 0 0/100% var(--line-height, 100%);
   mask: linear-gradient(45deg, #fff, #fff) no-repeat 0 0/100% var(--line-height, 100%);
 }
+
 .split-lines > *:nth-child(2) {
   -webkit-mask-position-y: calc(1* var(--line-height));
   mask-position-y: calc(1* var(--line-height));
 }
+
 .split-lines > *:nth-child(3) {
   -webkit-mask-position-y: calc(2* var(--line-height));
   mask-position-y: calc(2* var(--line-height));
 }
+
 .split-lines > *:nth-child(4) {
   -webkit-mask-position-y: calc(3* var(--line-height));
   mask-position-y: calc(3* var(--line-height));
 }
+
 .split-lines > *:nth-child(5) {
   -webkit-mask-position-y: calc(4* var(--line-height));
   mask-position-y: calc(4* var(--line-height));
 }
+
 .split-lines > *:nth-child(5) ~ * {
   -webkit-mask-position-y: calc(5 * var(--line-height));
   mask-position-y: calc(5 * var(--line-height));
@@ -30,32 +36,29 @@
   mask-size: 100% 100%;
 }
 
-@-moz-document url-prefix() {
-  .split-lines > * {
-    mask: none;
-  }
-  .split-lines > * ~ * {
-    display: none;
-  }
-}
 @keyframes hero-text-headline {
   0% {
     transform: translateX(-100%);
   }
+
   33% {
     opacity: 0;
   }
+
   34% {
     opacity: 0;
   }
+
   67% {
     opacity: 1;
     transform: none;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 .hero.text-image {
   --duration: 2s;
 }
@@ -66,60 +69,70 @@
 .active .hero-slide h2 * {
   animation: hero-text-headline 1 var(--duration) forwards;
 }
-@media (prefers-reduced-motion) {
+
+@media (prefers-reduced-motion: ) {
+
   .hero.text-image h1 *,
-.hero.text-image h2 *,
-.active .hero-slide h1 *,
-.active .hero-slide h2 * {
+  .hero.text-image h2 *,
+  .active .hero-slide h1 *,
+  .active .hero-slide h2 * {
     opacity: 1;
     transform: none;
     animation: none;
   }
 }
+
 .hero.text-image h1.split-lines,
 .hero.text-image h2.split-lines,
 .active .hero-slide h1.split-lines,
 .active .hero-slide h2.split-lines {
   animation: none;
 }
+
 .hero.text-image h1.split-lines > *,
 .hero.text-image h2.split-lines > *,
 .active .hero-slide h1.split-lines > *,
 .active .hero-slide h2.split-lines > * {
   opacity: 0;
 }
+
 @media (prefers-reduced-motion) {
   .hero.text-image h1.split-lines > *,
-.hero.text-image h2.split-lines > *,
-.active .hero-slide h1.split-lines > *,
-.active .hero-slide h2.split-lines > * {
+  .hero.text-image h2.split-lines > *,
+  .active .hero-slide h1.split-lines > *,
+  .active .hero-slide h2.split-lines > * {
     opacity: 1;
   }
 }
+
 .hero.text-image h1.split-lines > *:nth-child(2),
 .hero.text-image h2.split-lines > *:nth-child(2),
 .active .hero-slide h1.split-lines > *:nth-child(2),
 .active .hero-slide h2.split-lines > *:nth-child(2) {
   animation-delay: calc(.1s * 1);
 }
+
 .hero.text-image h1.split-lines > *:nth-child(3),
 .hero.text-image h2.split-lines > *:nth-child(3),
 .active .hero-slide h1.split-lines > *:nth-child(3),
 .active .hero-slide h2.split-lines > *:nth-child(3) {
   animation-delay: calc(.1s * 2);
 }
+
 .hero.text-image h1.split-lines > *:nth-child(4),
 .hero.text-image h2.split-lines > *:nth-child(4),
 .active .hero-slide h1.split-lines > *:nth-child(4),
 .active .hero-slide h2.split-lines > *:nth-child(4) {
   animation-delay: calc(.1s * 3);
 }
+
 .hero.text-image h1.split-lines > *:nth-child(5),
 .hero.text-image h2.split-lines > *:nth-child(5),
 .active .hero-slide h1.split-lines > *:nth-child(5),
 .active .hero-slide h2.split-lines > *:nth-child(5) {
   animation-delay: calc(.1s * 4);
 }
+
 .hero.text-image h1.split-lines > *:nth-child(5) ~ *,
 .hero.text-image h2.split-lines > *:nth-child(5) ~ *,
 .active .hero-slide h1.split-lines > *:nth-child(5) ~ *,
@@ -132,17 +145,19 @@
     visibility: visible;
   }
 }
+
 .hero.text-image h1:not(.split-lines),
 .hero.text-image h2:not(.split-lines) {
   visibility: hidden;
   animation: split-lines-no-js 1 0.1s 5s forwards;
 }
 
-@media (max-width: 899.9px) {
+@media not screen and (min-width: 900px) {
+
   .active .hero-slide h1,
-.active .hero-slide h1 *,
-.active .hero-slide h2,
-.active .hero-slide h2 * {
+  .active .hero-slide h1 *,
+  .active .hero-slide h2,
+  .active .hero-slide h2 * {
     animation: none;
     opacity: 1 !important;
   }
