@@ -3,8 +3,21 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=yes, viewport-fit=cover">
 	<link rel="shortcut icon" href="../images/icons/favicon.ico" type="image/png">
+
+	<link rel="styleSheet" href="./bootstrap5/css/bootstrap.min.css">
+
 	<link rel="styleSheet" href="./hero-carousel.css">
 	<link rel="styleSheet" href="./split-lines.css">
+
+	<!-- To do: periodically click on next button to replace BS JS which is used only for auto sliding -->
+
+	<script src="./bootstrap5/js/bootstrap.bundle.js" type="module"></script>
+
+	<!-- <script src="__jquery.min.js" type="module"></script>
+	<script src="_bootstrap.bundle.min.js" type="module"></script> -->
+
+	<script src="./hero-carousel.js" type="module"></script>
+	<script src="./split-lines.js" type="module"></script>
 
 	<script>
 		document.head.dataset.platform = window.navigator.platform;
@@ -22,7 +35,7 @@
 
 				<section class="hero hero-carousel-container" id="hero">
 
-					<div class="carousel slide" data-ride="carousel" data-interval-="false" data-keyboard="false">
+					<div class="carousel slide" data-ride="carousel" data-bs-ride="carousel" data-interval="2000" data-keyboard="false" data-bs-interval="2000">
 						<div class="carousel-inner">
 							<div class="carousel-item active" id="pay-online">
 
@@ -362,11 +375,5 @@
 			</main>
 
 		</div>
-
-		<!-- <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js" type="module"></script> -->
-		
-		<!-- To do: periodically click on next button to replace BS JS which is used only for auto sliding -->
-		<script src="./hero-carousel.js" type="module"></script>
-		<script src="./split-lines.js" type="module"></script>
 
 </body>

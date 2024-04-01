@@ -87,10 +87,17 @@ if (document.querySelector(".hero .carousel")) {
 			indicators.children[new_index].querySelector("button").click();
 		};
 	});
-	$(".hero .carousel").on("slid.bs.carousel", function() {
-		let index = [...this.querySelector(".carousel-inner").children].indexOf(this.querySelector(".carousel-inner .active"));
+
+	function afterSlide(e) {
+		let index = [...e.target.querySelector(".carousel-inner").children].indexOf(e.target.querySelector(".carousel-inner .active"));
 		updateIndicators(index);
-	});
+	}
+	if (!window.jQuery) { // Bootstrap 5, no jQuery
+		document.querySelector(".hero .carousel").addEventListener('slid.bs.carousel', afterSlide);
+	} else { // jQuery Bootstrap 4
+		$(".hero .carousel").on("slid.bs.carousel", afterSlide);
+	}
+
 	let resize_timeout;
 	window.addEventListener("resize", (e) => {
 		let carousel = document.querySelector(".hero .carousel");
@@ -138,12 +145,20 @@ if (document.querySelector(".hero .carousel")) {
 		}
 	};
 	document.querySelector(".hero .carousel-inner").addEventListener("scroll", scrollStopped);
-	document.addEventListener("visibilitychange",
-		(e) => {
-			document.querySelectorAll(".carousel").forEach((el) => {
+	document.addEventListener("visibilitychange", e => {
+		document.querySelectorAll(".carousel").forEach((el) => {
+			if (!window.jQuery) { // Bootstrap 5, no jQuery
+				var carouselObject = new bootstrap.Carousel(el);
+				if (document.hidden === true) {
+					carouselObject.pause();
+				} else {
+					carouselObject.cycle();
+				}
+			} else { // jQuery Bootstrap 4
 				$(el).carousel(document.hidden === true ? "pause" : "cycle");
-			});
-		}, false);
+			}
+		});
+	}, false);
 	document.querySelector(".hero .carousel").addEventListener("animationstart", (e) => {
 		// Safari glitch when navigating back to the page
 		if (e.animationName === "hero-right-arrow") {
