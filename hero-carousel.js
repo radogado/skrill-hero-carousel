@@ -1,4 +1,7 @@
 if (document.querySelector(".hero .carousel")) {
+
+	const bootstrap4 = !!(window.jQuery && $.fn.modal && $.fn.modal.Constructor.VERSION);
+
 	window.updateURLParameter = (url, param, paramVal) => {
 		// return input string with updated/added URL parameter
 		var hash = url.match("#") ? "#" + url.split("#")[1] : "";
@@ -92,10 +95,10 @@ if (document.querySelector(".hero .carousel")) {
 		let index = [...e.target.querySelector(".carousel-inner").children].indexOf(e.target.querySelector(".carousel-inner .active"));
 		updateIndicators(index);
 	}
-	if (!window.jQuery) { // Bootstrap 5, no jQuery
-		document.querySelector(".hero .carousel").addEventListener('slid.bs.carousel', afterSlide);
-	} else { // jQuery Bootstrap 4
+	if (bootstrap4) { // jQuery Bootstrap 4
 		$(".hero .carousel").on("slid.bs.carousel", afterSlide);
+	} else { // Bootstrap 5, no jQuery
+		document.querySelector(".hero .carousel").addEventListener('slid.bs.carousel', afterSlide);
 	}
 
 	let resize_timeout;
@@ -147,15 +150,15 @@ if (document.querySelector(".hero .carousel")) {
 	document.querySelector(".hero .carousel-inner").addEventListener("scroll", scrollStopped);
 	document.addEventListener("visibilitychange", e => {
 		document.querySelectorAll(".carousel").forEach((el) => {
-			if (!window.jQuery) { // Bootstrap 5, no jQuery
+			if (bootstrap4) { // jQuery Bootstrap 4
+				$(el).carousel(document.hidden === true ? "pause" : "cycle");
+			} else { // Bootstrap 5, no jQuery
 				var carouselObject = new bootstrap.Carousel(el);
 				if (document.hidden === true) {
 					carouselObject.pause();
 				} else {
 					carouselObject.cycle();
 				}
-			} else { // jQuery Bootstrap 4
-				$(el).carousel(document.hidden === true ? "pause" : "cycle");
 			}
 		});
 	}, false);
